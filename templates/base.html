@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="{% static 'store/style.css' %}" />
 </head>
 <body>
-    <header>
-        <a href="{% url 'store:index' %}">
-            <h1>La boutique de Setra</h1>
-        </a>
+    <header class="header">
+        <div class="title-section">
+            <a href="{% url 'store:index' %}">
+                <h1 class="title">La boutique de Setra</h1>
+            </a>
+        </div>
         <nav class="menu">
             {% if user.is_authenticated %}
-                <p> Bienvenue {{ user.username }} !</p>
+                Bienvenue {{ user.username }} !
                 <a href="{% url 'accounts:logout' %}">Déconnexion</a>
             {% else %}
                 <a href="{% url 'accounts:signin' %}">Connexion</a>

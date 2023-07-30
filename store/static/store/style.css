@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.title-section {
+    background-color: rgb(206, 242, 242);
+    text-align: center;
+    padding: 10px;
+}
+
+.title-section a {
+    text-decoration: none;
+}
+
+.title {
+    color:black;
+}
+
+.menu {
+    background-color: gainsboro;
+    padding: 10px;
+    text-align: right;
+}
+
+.menu a {
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
