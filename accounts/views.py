@@ -23,3 +23,7 @@ def signin(request):
             login(request, user)
             return redirect('store:index')
     return render(request, 'accounts/signin.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('store:index')
