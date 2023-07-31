@@ -27,3 +27,12 @@ class Cart(models.Model):
 
     def __str__(self):
         return f'{self.customer} cart'
+    
+
+class CartOrder(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.cart} - {self.product} ({self.amount})'
