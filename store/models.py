@@ -28,6 +28,9 @@ class Cart(models.Model):
     def __str__(self):
         return f'{self.customer} cart'
     
+    def add(self, product):
+        pass
+    
 
 class CartOrder(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
