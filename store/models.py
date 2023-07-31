@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+from shop.settings import AUTH_USER_MODEL
     
 
 class Article(models.Model):
@@ -20,3 +20,10 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.article.name} ({self.size})'
+    
+
+class Cart(models.Model):
+    customer = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.customer} cart'
