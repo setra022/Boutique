@@ -29,7 +29,9 @@ class Cart(models.Model):
         return f'{self.customer} cart'
     
     def add(self, product):
-        pass
+        cartorder, _ = self.cartorder_set.get_or_create(product=product)
+        cartorder.amount += 1
+        cartorder.save()
     
 
 class CartOrder(models.Model):
