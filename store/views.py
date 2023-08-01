@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import Article, Cart, Product
 from django.views.generic import ListView, DetailView
 
@@ -20,4 +20,9 @@ def add_to_cart(request):
     cart.add(product)
 
     return redirect("store:detail", product.article.id)
+
+def cart(request):
+    cart, _ = Cart.objects.get_or_create(customer=request.user)
+    return render(request, 'store/cart.html', context={"cart": cart})
+    
 

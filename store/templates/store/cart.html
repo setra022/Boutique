@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if cart %}
+        <ul>
+            {% for cartorder in cart.cartorder_set.all %}
+            <li>
+                <a href="{% url 'store:detail' cartorder.product.article.id %}">{{ cartorder }}</a>
+                {{ cartorder.product.price }} € x {{ cartorder.amount }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        Total : {{ cart.get_price }} €
+
+    {% else %}
+        <p>Le panier est vide.</p>
+    {% endif %}
+
+<p>
+    <a href="{% url 'store:index' %}">Retour</a>
+</p>
+
+{% endblock %}

@@ -19,6 +19,7 @@
         <nav class="menu">
             {% if user.is_authenticated %}
                 Bienvenue {{ user.username }} !
+                <a href="{% url 'store:cart' %}">Voir le panier</a>
                 <a href="{% url 'accounts:logout' %}">Déconnexion</a>
             {% else %}
                 <a href="{% url 'accounts:signin' %}">Connexion</a>

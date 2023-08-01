@@ -32,6 +32,9 @@ class Cart(models.Model):
         cartorder, _ = self.cartorder_set.get_or_create(product=product)
         cartorder.amount += 1
         cartorder.save()
+
+    def get_price(self):
+        return sum([cartorder.product.price * cartorder.amount for cartorder in self.cartorder_set.all()])
     
 
 class CartOrder(models.Model):
