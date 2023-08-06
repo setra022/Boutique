@@ -6,8 +6,11 @@ body {
     margin: 0;
 }
 
-.title-section {
+.header {
     background-color: rgb(206, 242, 242);
+}
+
+.title-section {
     text-align: center;
     padding: 10px;
 }
@@ -24,6 +27,10 @@ body {
     background-color: gainsboro;
     padding: 10px;
     text-align: right;
+}
+
+.welcome-message {
+    display: inline;
 }
 
 .menu a {

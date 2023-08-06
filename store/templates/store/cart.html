@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    {% if cart %}
+    {% if cart.cartorder_set.all %}
         <ul>
             {% for cartorder in cart.cartorder_set.all %}
             <li>
