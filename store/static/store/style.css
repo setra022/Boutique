@@ -42,3 +42,44 @@ body {
 .menu a:hover {
     text-decoration: underline;
 }
+
+.main {
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main a {
+    text-decoration: none;
+    color: black;
+}
+
+.article {
+    border: solid 2px;
+    width: 300px;
+}
+
+.article h2 {
+    margin: 0;
+}
+
+.article-title {
+    background-color: rgb(162, 214, 247);
+    padding : 10px;
+    text-align: center;
+}
+
+.article .min-price {
+    background-color: rgb(195, 234, 243);
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+}
+
+.min-price-amount {
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+

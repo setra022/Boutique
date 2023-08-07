@@ -11,6 +11,9 @@ class Article(models.Model):
     def __str__(self):
         return self.name
     
+    def get_min_price(self):
+        return min([product.price for product in self.product_set.all()])
+    
 
 class Product(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)

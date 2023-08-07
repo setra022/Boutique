@@ -2,15 +2,23 @@
 
 {% block content %}
 
+    <div class="main">
     {% if article_list %}
-        <ul>
-            {% for article in article_list %}
-            <li><a href="{% url 'store:detail' article.id %}">{{ article.name }}</a></li>
-            {% endfor %}
-        </ul>
+        {% for article in article_list %}
+        <a href="{% url 'store:detail' article.id %}">
+            <article class="article">
+                <h2 class="article-title">
+                    {{ article.name }}
+                </h2>
+                <img src="{{ article.image.url }}" alt="{{ article.name }}" style="max-width: 250px;">
+                <p class="min-price">A partir de <span class="min-price-amount">{{ article.get_min_price }} €</span></p>
+            </article>
+        </a>
+        {% endfor %}
 
     {% else %}
         <p>Pas d'article disponible.</p>
     {% endif %}
+    </div>
 
 {% endblock %}
