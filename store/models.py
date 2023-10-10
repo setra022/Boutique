@@ -7,6 +7,7 @@ class Article(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to="articles", null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=0.0, null=True, blank=True)
     
     def __str__(self):
         return self.name
