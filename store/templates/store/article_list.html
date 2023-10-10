@@ -10,8 +10,18 @@
                 <h2 class="article-title">
                     {{ article.name }}
                 </h2>
-                <img src="{{ article.image.url }}" alt="{{ article.name }}" style="max-width: 250px;">
-                <p class="min-price">A partir de <span class="min-price-amount">{{ article.get_min_price }} €</span></p>
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="{{ article.name }}" style="max-width: 250px;">
+                {% endif %}
+                <p class="price">
+                    {% if article.price %}
+                        <span class="price-amount">{{ article.price }} €</span>
+                    {% elif article.product_set.all %}
+                        A partir de <span class="price-amount">{{ article.get_min_price }} €</span>
+                    {% else %}
+                        Pas de prix disponible
+                    {% endif %}
+                </p>
             </article>
         </a>
         {% endfor %}
